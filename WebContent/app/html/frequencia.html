@@ -1,0 +1,41 @@
+<div>
+	<h2>Frequência Escolar Rest</h2>
+	<hr />
+	<div>
+		<form ng-controller="FrequenciaController as ctrl" ng-submit="ctrl.enviar(ctrl.dadosLogin)">
+			<button class="btn btn-primary" ng-click="ctrl.getEstudantes()">Carregar Estudantes
+			</button>
+			<button class="btn btn-success" type="submit">Enviar</button>
+			<span>Mês atual: {{ctrl.thisMonthYear}}</span>
+
+			<table class="table table-striped">
+				<thead>
+					<th>Instituição de ensino</th>
+					<th>Matrícula</th>
+					<th>Nome completo</th>
+					<th>Data de nascimento</th>
+					<th>CPF</th>
+					<th>Nome da mãe</th>
+					<th>Curso matriculado</th>
+					<th>Nível de ensino</th>
+					<th>Modalidade de ensino</th>
+					<th>Frequência</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="estudante in ctrl.listaEstudantes">
+						<td>{{estudante.nomeInstituicaoEnsino}}</td>
+						<td>{{estudante.numeroMatricula}}</td>
+						<td>{{estudante.nomeCompleto}}</td>
+						<td>{{ estudante.dataNascimento.dayOfMonth }}/{{ estudante.dataNascimento.monthValue }}/{{ estudante.dataNascimento.year }}</td>
+						<td>{{estudante.cpf}}</td>
+						<td>{{estudante.nomeMae}}</td>
+						<td>{{estudante.nomeCursoMatriculado}}</td>
+						<td>{{estudante.nivelEnsino}}</td>
+						<td>{{estudante.modalidadeEnsino}}</td>
+						<td>{{estudante.percentualFrequencia}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+</div>
