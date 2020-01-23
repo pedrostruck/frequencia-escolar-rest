@@ -1,7 +1,6 @@
 package com.dominandoti.pos.frequencia.entities;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,7 +26,7 @@ public class Estudante implements Serializable {
 	private String nomeCompleto;
 
 	@Column(name = "data_nascimento")
-	private LocalDate dataNascimento;
+	private String dataNascimento;
 
 	@Column(name = "cpf")
 	private String cpf;
@@ -83,11 +82,11 @@ public class Estudante implements Serializable {
 		this.nomeCompleto = nomeCompleto;
 	}
 
-	public LocalDate getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(LocalDate dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
