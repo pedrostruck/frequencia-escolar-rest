@@ -19,26 +19,9 @@ public class EstudanteService {
 		return estudanteDAO.list();
 	}
 
-	public Estudante getEstudanteById(Integer id) {
-		return estudanteDAO.findById(id);
-	}
-
 	@Transactional
 	public Estudante salvarFrequenciaEstudante(Estudante estudante) {
 		return estudanteDAO.update(estudante);
-	}
-
-	@Transactional
-	public boolean salvarFrequenciaEstudantes(List<Estudante> estudantesComFrequencia) {
-		for (Estudante estudante : estudantesComFrequencia) {
-			estudanteDAO.update(estudante);
-		}
-		return true;
-	}
-	
-	@Transactional
-	public void createEstudante(Estudante estudante) {
-		estudanteDAO.insert(estudante);
 	}
 
 }

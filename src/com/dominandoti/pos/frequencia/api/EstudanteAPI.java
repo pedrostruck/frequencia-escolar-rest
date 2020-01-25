@@ -26,22 +26,10 @@ public class EstudanteAPI {
 		return Response.ok(estudanteService.getAllEstudantes()).build();
 	}
 
-	@GET
-	@Path("/id")
-	public Response getEstudanteById(Integer id) {
-		return Response.ok(estudanteService.getEstudanteById(id)).build();
-	}
-
 	@POST
 	@Path("/salvar")
 	public Response salvarFrequenciaEstudantes(Estudante estudante) {
 		return Response.ok(estudanteService.salvarFrequenciaEstudante(estudante)).build();
-	}
-
-	@POST
-	@Path("/inserir")
-	public Response createEstudante(Estudante estudante) {
-		return Response.ok().header("Access-Control-Allow-Origin", "*").build();
 	}
 
 }
