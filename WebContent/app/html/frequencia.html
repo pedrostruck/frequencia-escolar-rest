@@ -5,9 +5,8 @@
 		<form ng-controller="FrequenciaController as ctrl" ng-submit="ctrl.enviar()">
 			<button id="button1" class="btn btn-info" ng-click="ctrl.getEstudantes()">Carregar Estudantes
 			</button>
-			<button id="button2" class="btn btn-secondary" ng-click="ctrl.generateFrequenciasAleatorias()">Preencher aleatoriamente
+			<button id="button2" class="btn btn-success" ng-click="ctrl.generateFrequenciasAleatorias()">Preencher aleatoriamente e enviar
 			</button>
-			<button id="button3" class="btn btn-success" type="submit">Enviar</button>
 			<span>Mês atual: {{ctrl.thisMonthYear}}</span>
 
 			<table class="table table-striped">

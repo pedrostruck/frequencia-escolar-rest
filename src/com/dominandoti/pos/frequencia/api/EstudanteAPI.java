@@ -5,11 +5,11 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.dominandoti.pos.frequencia.entities.Estudante;
 import com.dominandoti.pos.frequencia.service.EstudanteService;
 
 @Path("/estudante")
@@ -27,9 +27,11 @@ public class EstudanteAPI {
 	}
 
 	@POST
-	@Path("/salvar")
-	public Response salvarFrequenciaEstudantes(Estudante estudante) {
-		return Response.ok(estudanteService.salvarFrequenciaEstudante(estudante)).build();
+	@Path("/salvar/{matricula}/{frequencia}")
+	public Response salvarFrequenciaEstudantes(@PathParam("matricula") String matricula,
+					@PathParam("frequencia") String frequencia) {
+		return Response.ok(estudanteService.salvarFrequenciaEstudante(matricula, frequencia))
+						.build();
 	}
 
 }

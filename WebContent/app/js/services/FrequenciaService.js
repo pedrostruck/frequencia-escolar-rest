@@ -5,17 +5,16 @@ moduleApp.factory('FrequenciaService', function($http) {
 		return $http.get(baseURL + 'listar');
 	}
 
-	function _getEstudante(id) {
-		return $http.get(baseURL + 'id');
-	}
-
 	function _sendEstudante(estudante) {
-		return $http.post(baseURL + 'salvar', estudante);
+		return $http.post(
+			baseURL + 
+			'salvar/' + 
+			estudante.numeroMatricula + '/' +
+			estudante.percentualFrequencia);
 	}
 
 	return {
 		getEstudantes: _getEstudantes,
-		getEstudante: _getEstudante,
 		sendEstudante: _sendEstudante
 	};
 });

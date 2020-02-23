@@ -23,9 +23,7 @@ function FrequenciaController($scope, $location, FrequenciaService) {
 		self.listaEstudantes.forEach((estudante) => {
 			self.service
 				.sendEstudante(estudante)
-				.success(function(dados) {
-					// window.open("Lista de frequência enviada com sucesso.")
-				})
+				.success(function(dados) {})
 				.error(function(dados, status) {});
 		});
 	};
@@ -37,6 +35,7 @@ function FrequenciaController($scope, $location, FrequenciaService) {
 	};
 
 	function getNumeroAleatorio() {
-		return Math.floor(Math.random() * 100.0 + 1.0);
-	};
-};
+		let precision = 100;
+		return Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1 * precision);
+	}
+}

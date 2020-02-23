@@ -20,8 +20,11 @@ public class EstudanteService {
 	}
 
 	@Transactional
-	public Estudante salvarFrequenciaEstudante(Estudante estudante) {
-		return estudanteDAO.update(estudante);
+	public boolean salvarFrequenciaEstudante(String matricula, String frequencia) {
+		Estudante estudante = estudanteDAO.getEstudanteByMatricula(matricula);
+		estudante.setPercentualFrequencia(Double.valueOf(frequencia));
+		estudanteDAO.update(estudante);
+		return true;
 	}
 
 }
